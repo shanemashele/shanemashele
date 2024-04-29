@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  <!-- In your template -->
+  <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
+  <link rel="icon" type="image/x-icon" href="{%static '/images/favicon.ico'%}">
+
+    <!-- Include the Tailwind CSS CDN or install it locally -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+
+    <!-- Add Tailwind CSS classes to the existing styles -->
+    <style>
+      
+/* Bordered form */
+form {
+  border: pink;
+}
+
+.align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration-color: blue;
+}
+
+/* Full-width inputs */
+.container {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.container a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Set a style for all buttons */
+
+
+/* Add a hover effect for buttons */
+input:hover {
+  opacity: 1;
+}
+
+body {
+  background-image: url('https://htmlcolorcodes.com/assets/images/colors/light-pink-color-solid-background-1920x1080.png');
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: pink;
+  color: var(--text-color);
+  align-items: center;
+  padding: 2rem 9%;
+}
+
+.footer-text p {
+  font-size: 0.9rem;
+}
+
+      input {
+        @apply bg-purple-500 px-5 py-3 my-2 rounded-md cursor-pointer w-full;
+      }
+    </style>
+  </head>
+  <body class="align">
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible  fade show " role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong></strong> {{message}}
+    </div>
+    {% endfor %}
+    <form action="/login/" method="post"> {% csrf_token %}
+      <div class="container">
+        <label for="uname"><b>Username </b></label>
+          <p></p>
+        <input type="text" placeholder="Username" name="username" class="bg-gray-200 px-4 py-2 my-2 rounded-md w-full" required>
+        <p></p>
+        <label for="psw"><b>Password</b></label>
+          <p></p>
+        <input type="password" placeholder="Enter Password" name="password" class="bg-gray-200 px-4 py-2 my-2 rounded-md w-full">
+          <p></p>
+        <button class="bg-pink-500 hover:bg-pink-200 px-3 py-1 rounded-md">Login</button>
+        <p></p>
+        <span class="psw"> <a href="/signup">Register</a><span>
+        
+      </div>
+    </form>
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>CopyRight &copy; 2024 by African Fashion Shop | All Rights Reserved.</p>
+        <p>About Us</p>
+        <p>Our Services</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+
+/* Bordered form */
+form {
+  border: pink;
+}
+
+.align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration-color: blue;
+}
+
+/* Full-width inputs */
+.container {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.container a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Set a style for all buttons */
+
+
+/* Add a hover effect for buttons */
+input:hover {
+  opacity: 1;
+}
+
+body {
+  background-image: url('https://htmlcolorcodes.com/assets/images/colors/light-pink-color-solid-background-1920x1080.png');
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: pink;
+  color: var(--text-color);
+  align-items: center;
+  padding: 2rem 9%;
+}
+
+.footer-text p {
+  font-size: 0.9rem;
+}

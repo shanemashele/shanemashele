@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Address</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://htmlcolorcodes.com/assets/images/colors/light-pink-color-solid-background-1920x1080.png');
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Address</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="address_type">Address Type:</label><br>
+            <select id="address_type" name="address_type">
+                <option value="ship">Shipping</option>
+                <option value="bill">Billing</option>
+                <!-- Add more options if needed -->
+            </select><br>
+
+            <label for="street_address">Street Address:</label><br>
+            <input type="text" id="street_address" name="street_address"><br>
+
+            <label for="city">City:</label><br>
+            <input type="text" id="city" name="city"><br>
+
+           
+
+            <label for="postal_code">Postal Code:</label><br>
+            <input type="text" id="postal_code" name="postal_code"><br>
+
+            <label for="country">Country:</label><br>
+            <input type="text" id="country" name="country" ><br>
+
+            <input type="checkbox" id="default" name="default">
+            <label for="default">Default</label><br>
+
+            <input type="checkbox" id="is_active" name="is_active" checked>
+            <label for="is_active">Active</label><br>
+
+            <button type="submit">Save Address</button>
+        </form>
+    </div>
+</body>
+</html>
